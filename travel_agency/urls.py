@@ -17,11 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-
 from travel_agency_app.views import *
 
 
-router = routers.DefaultRouter()
+router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'countries', CountryViewSet)
 router.register(r'cities', CityViewSet)
 
@@ -31,5 +30,6 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
+
     # path('countries/', CountryList.as_view(), name='countries-list')
 ]

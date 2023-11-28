@@ -6,10 +6,10 @@ from travel_agency_app.models import *
 class CountrySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Country
-        fields = ['name']
+        fields = ['id', 'name']
 
 
 class CitySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = City
-        fields = ['name', 'country']
+        fields = ['country_id', "name"]

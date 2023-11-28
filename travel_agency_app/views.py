@@ -1,8 +1,5 @@
 from rest_framework import viewsets
-
 from travel_agency_app.models import Country, City
-
-
 from travel_agency_app.serializers import CountrySerializer, CitySerializer
 
 
